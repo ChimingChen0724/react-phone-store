@@ -20,6 +20,8 @@ class ProductProvider extends Component {
     componentDidMount() {
         this.setProduct();
     }
+
+    // keep the original data to "tempProduct" and able to reuse for the "clearCart"
     setProduct = () => {
         let tempProducts = [];
         storeProducts.forEach(item => {
@@ -132,6 +134,7 @@ class ProductProvider extends Component {
             this.addTotals();
         })
     }
+    
     addTotals = () => {
         let subTotal = 0;
         this.state.cart.map(item =>(subTotal += item.total));
